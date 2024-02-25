@@ -52,7 +52,7 @@ class TestGeolocation(TestCase):
             f"Elementul demo nu este valid, expected:{expected_element_demo}, actual:{element_demo}"
 
 # test 5 - Verifică dacă butonul de geolocation este displayed
-    def test_buton_retrieve_password(self):
+    def test_buton_obtinere_gps(self):
         buton_geolocation = self.chrome.find_element(By.XPATH, "//button")
         assert buton_geolocation.is_displayed() == True, f"Butonul nu este afisat"
 

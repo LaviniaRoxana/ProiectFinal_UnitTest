@@ -38,7 +38,7 @@ class TestLinkuri(TestCase):
         for item in texte_linkuri_cautate:
             assert item in lista_texte_linkuri
 
-    # numaram numarul de linkuri de pe pagina, trebuie sa fie 44
+    # test 2 - numaram numarul de linkuri de pe pagina, trebuie sa fie 44
     def test_numarul_de_linkuri(self):
         html_links_list = self.chrome.find_element(By.TAG_NAME, "ul")
         items = html_links_list.find_elements(By.TAG_NAME, "li")
