@@ -67,7 +67,8 @@ class TestLogin(TestCase):
     def test_elementul_selenium(self):
         elementul_selenium = self.chrome.find_element(By.LINK_TEXT, "Elemental Selenium")
         expected_elementul_selenium = "http://elementalselenium.com/"
-        assert elementul_selenium.get_attribute("href") == expected_elementul_selenium, f"Invalid href, expected: {expected_elementul_selenium}, actual:{elementul_selenium.get_attribute('href')}"
+        assert elementul_selenium.get_attribute("href") == expected_elementul_selenium, \
+            f"Invalid href, expected: {expected_elementul_selenium}, actual:{elementul_selenium.get_attribute('href')}"
 
 # test 6 - Lasă goale user și pass
        # - Click login
@@ -137,13 +138,12 @@ class TestLogin(TestCase):
         clasa_flash = WebDriverWait(self.chrome, 60).until(EC.presence_of_element_located((By.ID, "flash"))) #EC.presence_of_element_located((By.CLASS_NAME, "flash success")
         assert clasa_flash.is_displayed() == True, f"clasa 'flash succes' nu este afisata"
 
-
 # test 11 - Completează cu user și pass valide
         # - Click login
         # - Click logout
         # - Verifică dacă ai ajuns pe https://the-internet.herokuapp.com/login
 
-    def test_final(self):
+    def test_login_logout_verifica_link_valid(self):
         self.chrome.find_element(By.ID, "username").send_keys('tomsmith')
         self.chrome.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
         self.chrome.find_element(By.XPATH, "//button").click()

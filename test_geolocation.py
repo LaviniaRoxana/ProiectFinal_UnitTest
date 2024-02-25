@@ -39,7 +39,8 @@ class TestGeolocation(TestCase):
     def test_verifica_element_h3(self):
         element_h3 = self.chrome.find_element(By.XPATH, "//h3")
         expected_element_h3 = "Geolocation"
-        assert element_h3.text == expected_element_h3, f"Elementul h 3 nu este valid, expected:{expected_element_h3}, actual:{element_h3}"
+        assert element_h3.text == expected_element_h3, (f"Elementul h 3 nu este valid, "
+                                                        f"expected:{expected_element_h3}, actual:{element_h3}")
 
 
     # test 4 - Verifică textul de pe elementul demo
@@ -47,7 +48,8 @@ class TestGeolocation(TestCase):
     def test_verifica_element_informatii_obtinere_GPS(self):
         element_demo = self.chrome.find_element(By.ID, "demo")
         expected_element_demo = "Click the button to get your current latitude and longitude"
-        assert element_demo.text == expected_element_demo, f"Elementul demo nu este valid, expected:{expected_element_demo}, actual:{element_demo}"
+        assert element_demo.text == expected_element_demo, \
+            f"Elementul demo nu este valid, expected:{expected_element_demo}, actual:{element_demo}"
 
 # test 5 - Verifică dacă butonul de geolocation este displayed
     def test_buton_retrieve_password(self):
